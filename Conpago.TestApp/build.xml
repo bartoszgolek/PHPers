@@ -24,39 +24,6 @@
         </exec>
     </target>
 
-    <target name="test">
-        <exec executable=".\vendor\bin\phpunit.bat" osfamily="windows" failonerror="true">
-            <arg value="-c"/>
-            <arg value="phpunit.xml"/>
-        </exec>
-        <exec executable="./vendor/bin/phpunit" osfamily="unix" failonerror="true">
-            <arg value="-c"/>
-            <arg value="phpunit.xml"/>
-        </exec>
-    </target>
-    <target name="test-ci">
-        <exec executable=".\vendor\bin\phpunit.bat" osfamily="windows">
-            <arg value="--log-junit"/>
-            <arg value="${build}\phpunit.xml"/>
-            <arg value="--coverage-html"/>
-            <arg value="${build}\CodeCoverage"/>
-            <arg value="--coverage-clover"/>
-            <arg value="${build}\CodeCoverage\clover.xml"/>
-            <arg value="-c"/>
-            <arg value="phpunit.xml"/>
-        </exec>
-        <exec executable="./vendor/bin/phpunit" osfamily="unix">
-            <arg value="--log-junit"/>
-            <arg value="${build}/phpunit.xml"/>
-            <arg value="--coverage-html"/>
-            <arg value="${build}/CodeCoverage"/>
-            <arg value="--coverage-clover"/>
-            <arg value="${build}/CodeCoverage/clover.xml"/>
-            <arg value="-c"/>
-            <arg value="./phpunit.xml"/>
-        </exec>
-    </target>
-
     <target name="phpmd">
         <exec executable=".\vendor\bin\phpmd.bat" osfamily="windows" failonerror="true">
             <arg value="src"/>
@@ -155,30 +122,9 @@
         </exec>
     </target>
 
-    <target name="drop-db">
-        <exec executable=".\vendor\bin\doctrine.bat" osfamily="windows" failonerror="true">
-            <arg value="--force"/>
-            <arg value="orm:schema-tool:drop"/>
-        </exec>
-        <exec executable="./vendor/bin/doctrine" osfamily="unix" failonerror="true">
-            <arg value="--force"/>
-            <arg value="orm:schema-tool:drop"/>
-        </exec>
-    </target>
-
-    <target name="create-db">
-        <exec executable=".\vendor\bin\doctrine.bat" osfamily="windows" failonerror="true">
-            <arg value="orm:schema-tool:create"/>
-        </exec>
-        <exec executable="./vendor/bin/doctrine" osfamily="unix" failonerror="true">
-            <arg value="orm:schema-tool:create"/>
-        </exec>
-    </target>
-
     <target name="create-dist">
         <zip destfile="./conpago-testapp-dist.zip">
             <zipfileset dir="config" prefix="config" />
-            <zipfileset dir="console" prefix="console" />
             <zipfileset dir="src" prefix="src" />
             <zipfileset dir="public" prefix="public" />
         </zip>

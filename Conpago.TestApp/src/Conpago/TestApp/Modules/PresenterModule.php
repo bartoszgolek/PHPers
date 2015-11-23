@@ -9,8 +9,9 @@
 	{
 		public function build(IContainerBuilder $builder)
 		{
-			$builder->registerType('Conpago\Presentation\JsonPresenter')
-				->asA('Conpago\IPresenter')
-				->keyed('JsonPresenter');
+			$builder
+				->registerType('Conpago\Presentation\PlainPresenter')
+				->asA('Conpago\Presentation\Contract\IPlainPresenter')
+				->singleInstance();
 		}
 	}

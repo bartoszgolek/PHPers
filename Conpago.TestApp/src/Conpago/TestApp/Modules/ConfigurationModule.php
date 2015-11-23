@@ -44,11 +44,6 @@ class ConfigurationModule implements IModule {
 			->asA('Conpago\Contract\ITimeService');
 
 		$builder
-			->registerType('Conpago\Presentation\JsonPresenter')
-			->asA('Conpago\Presentation\Contract\IJsonPresenter')
-			->singleInstance();
-
-		$builder
 			->registerType('Conpago\Helpers\Response')
 			->asA('Conpago\Helpers\Contract\IResponse');
 

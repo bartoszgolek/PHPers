@@ -8,7 +8,7 @@
 
 	namespace Conpago\TestApp\Presentation\Presenter;
 
-	use Conpago\Presentation\Contract\IJsonPresenter;
+	use Conpago\Presentation\Contract\IPlainPresenter;
 	use Conpago\TestApp\Business\Contract\Presenter\IHelloWorldPresenter;
 
 	class HelloWorldPresenter implements IHelloWorldPresenter
@@ -16,17 +16,15 @@
 		/**
 		 * @var
 		 */
-		private $jsonPresenter;
+		private $plainPresenter;
 
-		function __construct(IJsonPresenter $jsonPresenter)
+		function __construct(IPlainPresenter $plainPresenter)
 		{
-			$this->jsonPresenter = $jsonPresenter;
+			$this->plainPresenter = $plainPresenter;
 		}
 
 		function showHelloWorld()
 		{
-			$data['success'] = true;
-			$data['text'] = "Hello World!!!";
-			$this->jsonPresenter->showJson($data);
+			$this->plainPresenter->show("Hello World!!!");
 		}
 	}
