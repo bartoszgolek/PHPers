@@ -1,0 +1,32 @@
+{
+  "name": "conpago/test-app",
+  "description": "Conpago.Pizza",
+  "version": "0.0.1-alpha",
+  "type": "project",
+  "minimum-stability": "dev",
+  "prefer-stable" : true,
+  "authors": [
+    {
+      "name": "Bartosz Gołek",
+      "email": "bartosz.golek@gmail.com",
+      "homepage": "http://bartosz.golek.biz"
+    }
+  ],
+  "require": {
+    "conpago/conpago": "*",
+    "conpago/conpago-logging-monolog-di": "*"
+  },
+  "require-dev": {
+    "pdepend/pdepend": "*",
+    "phpmd/phpmd": "*",
+    "squizlabs/php_codesniffer": "*",
+    "sebastian/phpcpd": "*",
+    "sebastian/phpdcd": "*",
+    "phpunit/phpunit": "*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Conpago\\Pizza\\": "src/"
+    }
+  }
+}
