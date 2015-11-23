@@ -11,6 +11,7 @@
 	use Conpago\DI\IContainerBuilder;
 	use Conpago\DI\IModule;
 	use Conpago\Pizza\Business\Modules\HelloWorldModule;
+	use Conpago\Pizza\Business\Modules\OrderPizzaModule;
 
 	class AppModulesModule implements IModule
 	{
@@ -19,5 +20,8 @@
 		{
 			$helloWorldModule = new HelloWorldModule();
 			$helloWorldModule->build($builder);
+
+			$orderPizzaModule = new OrderPizzaModule();
+			$orderPizzaModule->build($builder);
 		}
 	}
