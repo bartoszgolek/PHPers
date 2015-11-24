@@ -1,0 +1,7 @@
+curl -XPOST http://localhost:8002/PHPers/Conpago.Pizza/public/?interactor=OrderPizza -d '{
+    "order" : {
+        "name" : "margarita",
+        "double_dough" : "1",
+        "sauces" : ["ketchup", "majonez"]
+    }
+}'

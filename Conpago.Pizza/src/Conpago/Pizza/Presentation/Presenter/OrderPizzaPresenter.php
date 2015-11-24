@@ -8,9 +8,11 @@
 
 	namespace Conpago\Pizza\Presentation\Presenter;
 
+	use Conpago\Pizza\Business\Contract\Dao\Ingredient;
 	use Conpago\Pizza\Business\Contract\Presenter\IPizza;
 	use Conpago\Presentation\Contract\IJsonPresenter;
 	use Conpago\Pizza\Business\Contract\Presenter\IOrderPizzaPresenter;
+	use StdClass;
 
 	class OrderPizzaPresenter implements IOrderPizzaPresenter
 	{
@@ -26,6 +28,15 @@
 
 		function deliver(IPizza $pizza)
 		{
-			$this->jsonPresenter->showJson($pizza);
+			$func = function(Ingredient $i){
+				return $i->getName();
+			};
+
+			$data = new StdClass;
+			$data->ingredients = array_map($func, $pizza->getIngredients());
+			$data->double_dough = $pizza->getDoubleDough();
+			$data->sauces = $pizza->getSauces();
+
+			$this->jsonPresenter->showJson($data);
 		}
 	}

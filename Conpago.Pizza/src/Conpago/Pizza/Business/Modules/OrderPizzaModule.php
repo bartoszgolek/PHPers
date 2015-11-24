@@ -9,7 +9,6 @@
 	namespace Conpago\Pizza\Business\Modules;
 
 	use Conpago\DI\IContainerBuilder;
-	use Conpago\DI\Parameter;
 	use Conpago\DI\IModule;
 
 	class OrderPizzaModule implements IModule
@@ -35,6 +34,10 @@
 
 			$builder->registerType('Conpago\Pizza\Presentation\Presenter\OrderPizzaPresenter')
 				->asA('Conpago\Pizza\Business\Contract\Presenter\IOrderPizzaPresenter')
+				->singleInstance();
+
+			$builder->registerType('Conpago\Pizza\Dao\OrderPizzaDao')
+				->asA('Conpago\Pizza\Business\Contract\Dao\IOrderPizzaDao')
 				->singleInstance();
 		}
 	}
