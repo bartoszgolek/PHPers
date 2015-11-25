@@ -9,6 +9,13 @@
 	namespace Conpago\Pizza\Business\Contract\Dao;
 
 
+	use Conpago\Pizza\Business\Contract\Model\Ingredient;
+
 	interface IOrderPizzaDao {
-		function getIngredients(array $ingredients);
+		/**
+		 * @param string[] $ingredient_names
+		 *
+		 * @return Ingredient[]
+		 */
+		function getIngredients(array $ingredient_names);
 	}

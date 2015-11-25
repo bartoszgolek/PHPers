@@ -6,7 +6,7 @@
 	 * Time: 14:00
 	 */
 
-	namespace Conpago\Pizza\Business\Contract\Presenter;
+	namespace Conpago\Pizza\Business\Contract\PresenterModel;
 
 
 	interface IPizza {

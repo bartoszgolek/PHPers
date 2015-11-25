@@ -9,16 +9,21 @@
 	namespace Conpago\Pizza\Dao;
 
 
-	use Conpago\Pizza\Business\Contract\Dao\Ingredient;
 	use Conpago\Pizza\Business\Contract\Dao\IOrderPizzaDao;
+	use Conpago\Pizza\Business\Contract\Model\Ingredient;
 
 	class OrderPizzaDao implements IOrderPizzaDao {
 
-		function getIngredients( array $ingredients ) {
+		/**
+		 * @param string[] $ingredient_names
+		 *
+		 * @return Ingredient[]
+		 */
+		function getIngredients(array $ingredient_names) {
 			$func = function($ingredient){
 				return new Ingredient($ingredient);
 			};
 
-			return array_map($func, $ingredients);
+			return array_map($func, $ingredient_names);
 		}
 	}

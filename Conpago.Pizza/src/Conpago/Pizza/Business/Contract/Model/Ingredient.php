@@ -6,7 +6,7 @@
 	 * Time: 10:34
 	 */
 
-	namespace Conpago\Pizza\Business\Contract\Dao;
+	namespace Conpago\Pizza\Business\Contract\Model;
 
 
 	class Ingredient {

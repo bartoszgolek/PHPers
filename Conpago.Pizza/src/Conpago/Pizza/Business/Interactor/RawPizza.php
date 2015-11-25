@@ -9,6 +9,8 @@
 	namespace Conpago\Pizza\Business\Interactor;
 
 
+	use Conpago\Pizza\Business\Contract\Model\Ingredient;
+
 	class RawPizza {
 		private $double_dough;
 		private $ingredients;
@@ -17,7 +19,7 @@
 		 * RawPizza constructor.
 		 *
 		 * @param $double_dough
-		 * @param $ingredients
+		 * @param Ingredient[] $ingredients
 		 */
 		public function __construct( $double_dough, $ingredients ) {
 			$this->double_dough = $double_dough;
@@ -32,7 +34,7 @@
 		}
 
 		/**
-		 * @return mixed
+		 * @return Ingredient[]
 		 */
 		public function getIngredients() {
 			return $this->ingredients;

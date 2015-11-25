@@ -6,7 +6,7 @@
 	 * Time: 14:07
 	 */
 
-	namespace Conpago\Pizza\Presentation\Controller;
+	namespace Conpago\Pizza\Presentation\RequestData;
 
 
 	use Conpago\Pizza\Business\Contract\RequestData\IPizzaOrder;

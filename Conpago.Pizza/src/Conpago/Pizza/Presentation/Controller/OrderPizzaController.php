@@ -11,10 +11,10 @@
 	use Conpago\Helpers\Contract\IRequestData;
 	use Conpago\Pizza\Business\Contract\Interactor\IOrderPizza;
 	use Conpago\Pizza\Presentation\Contract\Controller\IOrderPizzaController;
+	use Conpago\Pizza\Presentation\RequestData\PizzaOrder;
 
 	class OrderPizzaController implements IOrderPizzaController
 	{
-
 		/**
 		 * @var IOrderPizza
 		 */

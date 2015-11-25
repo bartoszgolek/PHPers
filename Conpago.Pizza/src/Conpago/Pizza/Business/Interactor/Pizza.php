@@ -9,7 +9,7 @@
 	namespace Conpago\Pizza\Business\Interactor;
 
 
-	use Conpago\Pizza\Business\Contract\Presenter\IPizza;
+	use Conpago\Pizza\Business\Contract\PresenterModel\IPizza;
 
 	class Pizza implements IPizza{
 		protected $ingredients;

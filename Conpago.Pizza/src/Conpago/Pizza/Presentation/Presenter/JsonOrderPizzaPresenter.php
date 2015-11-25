@@ -8,13 +8,14 @@
 
 	namespace Conpago\Pizza\Presentation\Presenter;
 
-	use Conpago\Pizza\Business\Contract\Dao\Ingredient;
-	use Conpago\Pizza\Business\Contract\Presenter\IPizza;
-	use Conpago\Presentation\Contract\IJsonPresenter;
-	use Conpago\Pizza\Business\Contract\Presenter\IOrderPizzaPresenter;
 	use StdClass;
+	use Conpago\Pizza\Business\Contract\Model\Ingredient;
+	use Conpago\Pizza\Business\Contract\PresenterModel\IPizza;
+	use Conpago\Pizza\Business\Contract\Presenter\IOrderPizzaPresenter;
+	use Conpago\Presentation\Contract\IJsonPresenter;
 
-	class OrderPizzaPresenter implements IOrderPizzaPresenter
+
+	class JsonOrderPizzaPresenter implements IOrderPizzaPresenter
 	{
 		/**
 		 * @var

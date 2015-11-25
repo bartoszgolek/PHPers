@@ -2,31 +2,14 @@
 
 	namespace Conpago\Pizza\Business\Interactor;
 
-	use Conpago\Pizza\Business\Contract\Dao\Ingredient;
 	use Conpago\Pizza\Business\Contract\Dao\IOrderPizzaDao;
 	use Conpago\Pizza\Business\Contract\Interactor\IOrderPizza;
+	use Conpago\Pizza\Business\Contract\Model\Ingredient;
 	use Conpago\Pizza\Business\Contract\Presenter\IOrderPizzaPresenter;
 	use Conpago\Pizza\Business\Contract\RequestData\IPizzaOrder;
 
 	class OrderPizza implements IOrderPizza
 	{
-		/**
-		 * @var RecipeLibrary
-		 */
-		protected $recipe_library;
-		/**
-		 * @var Owen
-		 */
-		protected $owen;
-		/**
-		 * @var IOrderPizzaPresenter
-		 */
-		private $presenter;
-		/**
-		 * @var IOrderPizzaDao
-		 */
-		private $orderPizzaDao;
-
 		/**
 		 * OrderPizza constructor.
 		 *
@@ -56,6 +39,7 @@
 
 			$this->presenter->deliver($baked_pizza);
 		}
+		//...//
 
 		/**
 		 * @param Ingredient[] $ingredients
@@ -66,4 +50,21 @@
 		private function makePizza(array $ingredients, $getDoubleDough ) {
 			return new RawPizza($getDoubleDough, $ingredients);
 		}
+
+		/**
+		 * @var RecipeLibrary
+		 */
+		protected $recipe_library;
+		/**
+		 * @var Owen
+		 */
+		protected $owen;
+		/**
+		 * @var IOrderPizzaPresenter
+		 */
+		private $presenter;
+		/**
+		 * @var IOrderPizzaDao
+		 */
+		private $orderPizzaDao;
 	}

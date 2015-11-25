@@ -32,7 +32,7 @@
 				->named('OrderPizza')
 				->singleInstance();
 
-			$builder->registerType('Conpago\Pizza\Presentation\Presenter\OrderPizzaPresenter')
+			$builder->registerType('Conpago\Pizza\Presentation\Presenter\JsonOrderPizzaPresenter')
 				->asA('Conpago\Pizza\Business\Contract\Presenter\IOrderPizzaPresenter')
 				->singleInstance();
 
