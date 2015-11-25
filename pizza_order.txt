@@ -1,4 +1,4 @@
-curl -XPOST http://localhost:8002/PHPers/Conpago.Pizza/public/?interactor=OrderPizza -d '{
+curl -XPOST http://localhost:82/PHPers/Conpago.Pizza/public/?interactor=OrderPizza -H "Content-Type:application/json" -d '{
     "order" : {
         "name" : "margarita",
         "double_dough" : "1",
